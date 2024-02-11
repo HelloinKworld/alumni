@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Network</title>
+    <style>
+        /* CSS styles for both pages */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, nav, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* CSS styles specific to the login page */
+        .login-container {
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: calc(50% - 5px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .login-container input[type="text"] {
+            margin-right: 10px;
+        }
+
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        .login-container .error {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Styles for alumni content table */
+        .alumni-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .alumni-table th, .alumni-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .alumni-table th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .alumni-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Alumni Network</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Alumni Directory</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Login Page Content -->
+    <div class="login-container" id="login-container">
+        <h2>Login</h2>
+        <form action="#" method="post" id="login-form">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <div class="error"></div>
+    </div>
+
+    <section class="content" id="alumni-content">
+        <h2>Alumni Directory</h2>
+        <table class="alumni-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Passing Year</th>
+                    <th>Contact</th>
+                    <th>Branch</th>
+                    <th>Gender</th>
+                    <th>Current Position</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>2010</td>
+                    <td>john@example.com</td>
+                    <td>Computer Science</td>
+                    <td>Male</td>
+                    <td>Software Engineer</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>2005</td>
+                    <td>jane@example.com</td>
+                    <td>Electrical Engineering</td>
+                    <td>Female</td>
+                    <td>Project Manager</td>
+                </tr>
+                <!-- Add more alumni rows as needed -->
+            </tbody>
+        </table>
+    </section>
+    <footer>
+        <p>&copy; 2024 Alumni Network</p>
+    </footer>
+
+    <script>
+        // JavaScript to toggle between alumni content and login page
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('alumni-content').style.display = 'none'; // Initially hide alumni content
+            document.getElementById('login-container').style.display = 'block'; // Display login form
+        });
+
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Dummy login validation (replace with actual validation)
+            var username = document.getElementsByName('username')[0].value;
+            var password = document.getElementsByName('password')[0].value;
+
+            // Dummy check for username and password (replace with actual validation)
+            if (username === 'admin' && password === 'password') {
+                // If login is successful, hide the login form and show alumni content
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('alumni-content').style.display = 'block';
+            } else {
+                // If login fails, display error message
+                document.querySelector('.error').textContent = 'Invalid username or password';
+            }
+        });
+    </script>
+</body>
+</
